@@ -17,6 +17,12 @@
             </div>
             @endif
 
+            @session("succes")
+            <div class="alert alert-succes">{{ $value }}</div>
+            @endsession
+
+
+
             <div class="form-group">
                 <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" required />
             </div>
@@ -25,7 +31,14 @@
                 <input type="password" name="password" placeholder="Password" required />
             </div>
 
-            <button type="submit" class="btn-submit">Submit</button>
+            <button type="submit" class="btn-submit">login</button>
+
+           <div class="form-links">
+            <a href="{{ route('register') }}" class="register-link">Register</a>
+            <a href="{{ route('password.forgot') }}" class="register-link">Forgot password?</a>
+           </div>
+
+
         </form>
 
     </div>
